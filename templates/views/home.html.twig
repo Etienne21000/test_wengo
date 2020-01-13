@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h1> Bienvenu sur le gestionnaire de tâches</h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Contenu</th>
+                <th scope="col">date</th>
+                <th scope="col">status</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for data in Tasks %}
+            <tr>
+                <td>{{ data.title }}</td>
+                <td>{{ data.content|slice(0, 20)~'...' }}</td>
+                {% if data.getModificationDate == null %}
+                <td>{{ data.getCreationDate|date("d/m/Y") }}</td>
+                {% elseif data.getModificationDate %}
+                <td>{{ data.getModificationDate|date("d/m/Y") }}</td>
+                {%  endif %}
+
+                {% if data.state == 0 %}
+                <td><i class="fas fa-ellipsis-h"></i></td>
+                {% elseif data.state == 1 %}
+                <td><i class="fas fa-spinner"></i></td>
+                {% elseif data.state == 2 %}
+                <td><i class="fas fa-check-circle"></i></td>
+                {%  endif %}
+
+                <td>
+                    <input type="button" class="btn btn-outline-primary" value="afficher" onclick="location.href='{{ path('singleTask', { id: data.id}) }}'"/>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <input type="button" class="btn btn-primary" value="Ajouter une tâche" onclick="location.href='{{ path('addTask') }}'"/>
+
+</div>
+{% endblock %}

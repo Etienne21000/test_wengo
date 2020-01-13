@@ -1,0 +1,378 @@
+/* body {
+padding-top: 50px;
+} */
+.starter-template {
+    padding: 40px 15px 5px 15px;
+    margin-left: 100px;
+    /* text-align: center; */
+}
+
+.navbar-nav a
+{
+    color: #fff;
+    transition: all .4s ease-in-out;
+}
+
+.navbar-nav a:hover
+{
+    /* transform: translateX(30px); */
+    text-decoration: none;
+}
+
+#navbarNavDropdown
+{
+    justify-content: flex-end;
+}
+
+.row
+{
+    /* margin-top: 100px; */
+    /* margin-top: 30px;
+    justify-content: space-between;
+    align-items: center; */
+}
+.imagesRow
+{
+    margin-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sliderSelect
+{
+    margin-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.col-xs-4 img
+{
+    width: 100%;
+    transition: all .2s ease-in-out;
+}
+
+.col-xs-4 img:hover
+{
+    box-shadow: 0 1px 15px -6px rgba(0,0,0,0.32), 0 1px 15px 0 rgba(0,0,0,0.12), 0 6px 8px -2px rgba(0,0,0,0.1);
+}
+
+/*---------------------------------------
+Login view
+----------------------------------------*/
+.bodyForm
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container
+{
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.row
+{
+    justify-content: center;
+}
+
+.login-form-1{
+    width: 100%;
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+}
+
+.login-container form{
+    padding: 10%;
+}
+
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+
+.login-form-1 .ForgetPwd{
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/*---------------------------------------
+back office Admin home page
+----------------------------------------*/
+#blocInfos
+{
+    width: 100%;
+}
+
+.containerAdmin
+{
+    width: 100%;
+    margin-left: 120px;
+    margin-top: 22px;
+    padding: 40px 15px;
+    box-shadow: 0 1px 13px -6px rgba(0,0,0,-0.68), 0 1px 15px 0 rgba(0,0,0,-0.88), 0 6px 8px -2px rgba(0,0,0,0.09);
+}
+
+.serieRow
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.serieCol img
+{
+    height: auto;
+}
+/*---------------------------------------
+back office sub menu
+----------------------------------------*/
+.adminContent
+{
+    margin-top: 56px;
+    width: 100%;
+    /* margin-top: 56px; */
+    /* margin-left: 0;
+    margin-right: 0; */
+    /* height: 445px; */
+}
+
+.wrapper
+{
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar
+{
+    padding: 10px;
+    min-width: 250px;
+    max-width: 250px;
+    height: auto;
+    position: fixed;
+}
+
+#sidebar.active
+{
+    margin-left: -250px;
+}
+
+#sidebar
+{
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+
+a[data-toggle="collapse"]
+{
+    position: relative;
+}
+
+.dropdown-toggle::after
+{
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#sidebar {
+    background: #424242;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #424242;
+}
+
+/* #sidebar ul.components {
+padding: 20px 0;
+border-bottom: 1px solid #47748b;
+} */
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #424242;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #424242;
+}
+
+@media (max-width: 768px) {
+    #sidebar
+    {
+        margin-left: -250px;
+    }
+    #sidebar.active
+    {
+        margin-left: 0;
+    }
+}
+
+@media all and (min-width: 300px) and (max-width: 767px)
+{
+    /*-- Admin Home page --*/
+    .containerAdmin
+    {
+        margin: auto;
+
+    }
+
+    .starter-template
+    {
+        margin:auto;
+    }
+
+    .banner_image img
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 0px;
+    }
+
+    #banner
+    {
+        margin-bottom: 0px;
+        margin-top: 55px;
+        height: 620px;
+    }
+
+    /*-- Accueil --*/
+    footer
+    {
+        background-color: #777777;
+    }
+
+    footer p
+    {
+        margin: 10px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .all_gallery
+    {
+        margin: auto;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    /* .serie
+    {
+        width: 100%;
+        margin: 10px 0;
+    } */
+
+    /*-- Update post--*/
+    .updatePost
+    {
+        width: 100%;
+    }
+
+    #full-featured-non-premium
+    {
+        width: 100%;
+    }
+
+    .content
+    {
+        flex-direction: column;
+    }
+
+    .gallery
+    {
+        margin: 36px 20px 20px 20px;
+        width: 90%;
+    }
+
+    .date
+    {
+        width: 70%;
+        text-align: left;
+    }
+
+    .content_serie
+    {
+        margin-top: 20px;
+    }
+
+    .separation
+    {
+        margin: 20px 0;
+    }
+
+    #display_img
+    {
+        text-align: center;
+    }
+
+    .images
+    {
+        width: 95%;
+        margin: 10px;
+        justify-content: center;
+    }
+
+    textarea
+    {
+        width: 100%;
+    }
+
+    /*Comment form*/
+    .login-form-1
+    {
+        background-color: #fff;
+    }
+
+
+}

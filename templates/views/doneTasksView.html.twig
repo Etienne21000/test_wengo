@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Toutes les tâches terminées' %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h1>Toutes les tâches terminée</h1>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Contenu</th>
+                <th scope="col">Terminée le </th>
+                <th scope="col">status</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for data in Tasks %}
+            <tr>
+                <td>{{ data.title }}</td>
+                <td>{{ data.content|slice(0, 20)~'...' }}</td>
+                <td>{{ data.getCreationDate|date("d/m/Y") }}</td>
+
+                {% if data.state == 0 %}
+                <td><i class="fas fa-ellipsis-h"></i></td>
+                {% elseif data.state == 1 %}
+                <td><i class="fas fa-spinner"></i></td>
+                {% elseif data.state == 2 %}
+                <td><i class="fas fa-check-circle"></i></td>
+                {%  endif %}
+
+                <td>
+                    <input type="button" class="btn btn-outline-primary" value="afficher" onclick="location.href='{{ path('singleTask', { id: data.id}) }}'"/>
+                </td>
+                
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

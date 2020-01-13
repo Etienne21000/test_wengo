@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1> {{ test }}! ✅</h1>
+
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>
+          <input type="button" class="btn btn-outline-primary" value="afficher" onclick="location.href='/'"/>
+      </td>
+      <td><i class="fas fa-ellipsis-h"></i></td>
+    </tr>
+
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+      <td>
+          <input type="button" class="btn btn-outline-primary" value="afficher" onclick="location.href='/'"/>
+      </td>
+      <td><i class="fas fa-spinner"></i></td>
+    </tr>
+
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+      <td>
+          <input type="button" class="btn btn-outline-primary" value="afficher" onclick="location.href='/'"/>
+      </td>
+      <td><i class="fas fa-check-circle"></i></td>
+    </tr>
+  </tbody>
+</table>
+    <!-- This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/Users/etienne/Desktop/opencr/test_Wengo/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/Users/etienne/Desktop/opencr/test_Wengo/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
+    </ul> -->
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gestionnaire de tâches {% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Application web de gestion de tâches en back-office">
+    <meta name="author" content="Etienne Juffard développeur web php/Symfony, Paris">
+    {% block stylesheets %}
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/bootstrap.css') }}"rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('css/all.css') }}"/>
+    <link href="{{ asset('css/starter-template.css') }}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,400&display=swap') }}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Special+Elite&display=swap') }}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Ubuntu&display=swap') }}" rel="stylesheet">
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap') }}" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+    {% block body %} {% endblock body %}
+    <header>
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>MENU ADMIN</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+
+                <li>
+                    <a href="{{ path('home') }}"> <i class="fas fa-tachometer-alt"></i> ADMIN HOME</a>
+                </li>
+
+                <li class="active">
+                    <a href="{{ path('allTasks') }}"> Toutes les tâches</a>
+                </li>
+
+                <li class="active">
+                    <a href="{{ path('inProgress') }}"> Tâches en cours</a>
+                </li>
+
+                <li class="active">
+                    <a href="{{ path('toDoTask') }}"> Tâches à démarrer</a>
+                </li>
+
+                <li class="active">
+                    <a href="{{ path('doneTasks') }}"> Tâches terminées</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    {% block javascripts %}
+    <script src="{{ asset('https://code.jquery.com/jquery-3.4.1.min.js') }}" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+{% endblock %}
+</body>
+</html>

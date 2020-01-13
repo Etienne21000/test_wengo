@@ -1,0 +1,16 @@
+# home:
+#     path: /home
+#     controller: App\Controller\HomeController::index
+#
+# # addTaskForm:
+# #     path: /addTaskForm
+# #     controller: App\Controller\TaskController::addTaskForm
+#
+# index:
+#     path: /
+#     controller: App\Controller\HomeController::index
+#
+#
+# #index:
+# #    path: /
+# #    controller: App\Controller\DefaultController::index

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Tâche' %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h3> {{ task.title }} </h3>
+    <h4>
+
+        {% if task.state == 0 %}
+        <td>{{ task.stateType }} <i class="fas fa-ellipsis-h"></i></td>
+        {% elseif task.state == 1 %}
+        <td> {{ task.stateType }} <i class="fas fa-spinner"></i></td>
+        {% elseif task.state == 2 %}
+        <td> {{ task.stateType }} <i class="fas fa-check-circle"></i></td>
+        {%  endif %}
+
+    </h4>
+    <p>
+        {% if task.getModificationDate == null %}
+        Tâche créée le {{ task.getCreationDate|date("d/m/Y à H:i") }}
+        {% elseif task.getEndDate == null %}
+        Dernière modification le {{ task.getModificationDate|date("d/m/Y à H:i") }}
+        {% elseif task.getEndDate %}
+        Traitée le {{ task.getEndDate|date("d/m/Y à H:i") }}
+        {%  endif %}
+        <br/>
+        {{ task.content }}
+        <br/>
+    </p>
+    {% if task.state <= 1 %}
+    <input type="button" class="btn btn-outline-primary" value="modifier" onclick="location.href='{{ path('updateTaskForm', { id: task.id}) }}'"/>
+{% endif %}
+
+<form style="display:inline-block" method="POST" action="{{ path('deleteTasks', {id: task.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cette tâche ?')">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ task.id) }}"/>
+    <button class="btn btn-outline-danger">supprimer</button>
+</form>
+</div>
+
+{% endblock %}

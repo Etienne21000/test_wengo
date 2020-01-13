@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Ajouter une tâche' %}
+
+{% block body %}
+
+<h1>Mettre à jour la tâche</h1>
+
+<hr class="separation">
+
+<div class="container">
+    <div class="containerAdmin">
+
+        <h2> Mise à jour</h2>
+
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-4">{{ form_row(form.title) }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-7">{{ form_row(form.content) }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">{{ form_row(form.state) }}</div>
+        </div>
+
+        <button class="btn btn-outline-primary">Editer</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% endblock %}
