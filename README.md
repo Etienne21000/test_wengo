@@ -58,10 +58,6 @@ Controllers :
 <br/>
 
 4. Guide d'installation du projet :
-<br/>
-```sh
-composer install
-```
 
 cloner url git hub :
 ```sh
