@@ -53,10 +53,6 @@ class Task
      */
     private $state;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $user_id;
 
     public function getId(): ?int
     {
@@ -140,17 +136,6 @@ class Task
         return $this;
     }
 
-    public function getUserId(): ?int
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(?int $user_id): self
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
 
     /**
     * @ORM\PrePersist
@@ -167,18 +152,6 @@ class Task
             $this->setModificationDate(new \DateTime('now'));
         }
     }
-
-    // /**
-    // * @ORM\PrePersist
-    // * @ORM\PreUpdate
-    // */
-    // public function updateState()
-    // {
-    //     if($this->getModificationDate() == null)
-    //     {
-    //         $this->state = 0;
-    //     }
-    // }
 
     /**
     * @ORM\PrePersist

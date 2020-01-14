@@ -3,11 +3,9 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\TaskRepository;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManagerInterface;
 
 
@@ -54,7 +52,7 @@ class TaskController extends AbstractController
     }
 
     /**
-    * @Route("/updateTaskForm/{id}", name="updateTaskForm", methods="GET|POST")
+    * @Route("/updateTaskForm/{id}", name="updateTaskForm")
     */
     public function updateTaskForm(Task $task, Request $request)
     {
@@ -63,6 +61,7 @@ class TaskController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
+            $this->em->persist($task);
             $this->em->flush();
             $this->addFlash('success', 'La tâche ' . $task->getTitle() . ' à bien été modifiée');
             return $this->redirectToRoute('allTasks');
